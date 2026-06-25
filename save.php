@@ -1,7 +1,7 @@
 <?php
 $name=$_POST['name'];
 $email=$_POST['email'];
-$contact=$_POST['phone'];
+$phone=$_POST['phone'];
 $message=$_POST['message'];
 
 $to="pushpendrasingh85793@gmail.com";
@@ -10,7 +10,7 @@ $subject="Response from Portfolio";
 $body =
 " Name: $name
   Email: $email
-  Contact No: $contact
+  Contact No: $phone
   Message: $message  ";
 
   $headers= "from: $email";
