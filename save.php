@@ -1,29 +1,38 @@
 <?php
-$name=$_POST['name'];
-$email=$_POST['email'];
-$phone=$_POST['phone'];
-$message=$_POST['message'];
 
-$to="pushpendrasingh85793@gmail.com";
-$subject="Response from Portfolio";
+$name = htmlspecialchars($_POST['name']);
+$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+$phone = htmlspecialchars($_POST['phone']);
+$message = htmlspecialchars($_POST['message']);
 
-$body =
-" Name: $name
-  Email: $email
-  Contact No: $phone
-  Message: $message  ";
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    die("Invalid email address");
+}
 
-  $headers= "from: $email";
+$to = "pushpendrasingh85793@gmail.com";
+$subject = "Response from Portfolio";
 
-  if(mail($to,$subject,$body,$headers)){
+$body = "
+New Contact Form Submission
+
+Name: $name
+Email: $email
+Phone: $phone
+
+Message:
+$message
+";
+
+$headers = "From: info@yourdomain.com\r\n";
+$headers .= "Reply-To: $email\r\n";
+
+if (mail($to, $subject, $body, $headers)) {
+    header("Location: index.html?success=1");
+    exit();
+} else {
     echo "<script>
-    window.location.href='index.html';
-    </script>";
-  } else{
-    echo "<script>
-    alert('failed to send message');
+    alert('Failed to send message');
     history.back();
-    </script> ";
-  }
-
+    </script>";
+}
 ?>
