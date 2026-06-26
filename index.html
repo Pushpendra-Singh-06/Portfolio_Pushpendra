@@ -217,7 +217,7 @@
   </head>
   <body class="antialiased selection:bg-amber-500/20 selection:text-amber-900">
     <!-- Navigation Bar -->
-    <nav class="nav-container">
+    <nav class="hidden sm:flex nav-container">
       <div class="nav-shape">
         <ul
           class="flex items-center gap-4 sm:gap-6 md:gap-8 text-[10px] sm:text-xs md:text-sm font-bold tracking-widest uppercase text-[#111827]"
@@ -228,7 +228,7 @@
               <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
-          <li class="hidden sm:block"> <a href="#identity-bento" class="hover:text-amber-500 transition-colors duration-300 relative group">
+          <li> <a href="#identity-bento" class="hover:text-amber-500 transition-colors duration-300 relative group">
               About
               <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span>
             </a>
@@ -247,6 +247,40 @@
         </ul>
       </div>
     </nav>
+
+<!-- Mobile Hamburger -->
+<button id="menu-toggle"
+  class="flex sm:hidden group absolute z-20 top-6 left-8 w-6 h-5 flex-col justify-between items-center focus:outline-none cursor-pointer ">
+
+  <span class="w-full h-0.5 bg-gray-700 rounded transition-all duration-300 origin-left group-[.open]:rotate-45 group-[.open]:translate-x-1"></span>
+
+  <span class="w-full h-0.5 bg-gray-700 rounded transition-all duration-300 group-[.open]:opacity-0"></span>
+
+  <span class="w-full h-0.5 bg-gray-700 rounded transition-all duration-300 origin-left group-[.open]:-rotate-45 group-[.open]:translate-x-1"></span>
+</button>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu"
+  class="hidden sm:hidden absolute top-16 left-0 w-full bg-white shadow-lg z-50">
+
+  <ul class="flex flex-col items-center py-6 gap-6 font-semibold uppercase">
+
+    <li><a href="#hero-zone">Home</a></li>
+
+    <li><a href="#identity-bento">About</a></li>
+
+    <li><a href="#projects-track">Projects</a></li>
+
+    <li>
+      <a href="#contactUs"
+        class="px-5 py-2 bg-gray-900 text-white rounded-full">
+        Engage
+      </a>
+    </li>
+
+  </ul>
+
+</div>
 
     <div id="optical-lens" class="flex items-center justify-center">
       <span
@@ -275,11 +309,11 @@
           </div>
 
           <div
-            class="parallax-layer shard w-64 h-32 top-[15%] left-[10%] rotate-12"
+            class="parallax-layer shard w-64 h-32 top-[12%] sm:top-[15%] left-[15%] sm:left-[10%] rotate-12"
             data-speed="0.08"
           ></div>
           <div
-            class="parallax-layer shard w-48 h-48 rounded-full bottom-[20%] right-[10%] -rotate-6"
+            class="parallax-layer shard w-32 h-32 sm:w-48 sm:h-48  rounded-full bottom-[17%] sm:bottom-[20%] right-[10%] -rotate-6"
             data-speed="-0.1"
           ></div>
 
@@ -338,12 +372,12 @@
                 and intuitive UI/UX design.
               </p>
             </div>
-
+           <a href="#projects-track">
             <button
               class="magnetic-btn px-8 py-4 bg-gray-900 text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-amber-500 transition-colors duration-500 shadow-xl pointer-events-auto"
             >
               Explore Work
-            </button>
+            </button> </a>
           </div>
         </section>
 
@@ -578,7 +612,7 @@
                             </svg>
                           </div>
                           <span class="text-sm font-medium"
-                            >github.com/pushpendra-singh-06</span
+                            >github.com/pushpendra-singh-06/</span
                           >
                         </a>
                       </div>
@@ -949,10 +983,10 @@
 
           <div
             id="projects-track"
-            class="flex w-[400vw] h-screen items-center mt-[50px]"
+            class="flex flex-col md:flex-row w-full lg:w-[400vw] min-h-screen lg:h-screen items-center mt-[40%] sm:mt-[50px]"
           >
             <div
-              class="project-slide w-screen h-screen flex flex-col md:flex-row items-center justify-center p-8 md:p-24 relative pt-32"
+              class="project-slide w-screen h-screen lg:h-screen flex flex-col md:flex-row items-center justify-center p-8 md:p-24 relative pt-32"
             >
               <div
                 class="w-full md:w-1/2 flex flex-col justify-center z-10 md:pr-16"
@@ -1011,7 +1045,7 @@
             </div>
 
             <div
-              class="project-slide w-screen h-screen flex flex-col md:flex-row items-center justify-center p-8 md:p-24 relative pt-32"
+              class="project-slide w-screen h-screen lg:h-screen flex flex-col md:flex-row items-center justify-center p-8 md:p-24 relative pt-32"
             >
               <div
                 class="w-full md:w-1/2 flex flex-col justify-center z-10 md:pr-16"
@@ -1070,7 +1104,7 @@
             </div>
 
             <div
-              class="project-slide w-screen h-screen flex flex-col md:flex-row items-center justify-center p-8 md:p-24 relative pt-32"
+              class="project-slide w-screen h-screen lg:h-screen flex flex-col md:flex-row items-center justify-center p-8 md:p-24 relative pt-32"
             >
               <div
                 class="w-full md:w-1/2 flex flex-col justify-center z-10 md:pr-16"
@@ -1125,7 +1159,7 @@
             </div>
 
             <div
-              class="project-slide w-screen h-screen flex flex-col md:flex-row items-center justify-center p-8 md:p-24 relative pt-32"
+              class="project-slide w-screen h-screen flex flex-col md:flex-row items-center justify-center p-8 md:p-24 relative pt-32 mb-20 sm:mb-0"
             >
               <div
                 class="w-full md:w-1/2 flex flex-col justify-center z-10 md:pr-16"
@@ -1185,7 +1219,7 @@
           </div>
         </section>
 
-        <section id="contactUs" class="relative z-20 bg-[#FAFAFA] pt-32 pb-16 px-4">
+        <section id="contactUs" class="relative z-20 bg-[#FAFAFA] pt-16 sm:pt-32 pb-16 px-4">
           <div class="max-w-4xl mx-auto text-center">
             <span
               class="text-xs font-bold text-amber-500 tracking-widest uppercase mb-4 block"
@@ -1201,6 +1235,7 @@
               id="contact-form"
               action="save.php"
               method="POST"
+
               class="divine-glass p-8 md:p-12 rounded-[2.5rem] flex flex-col gap-6 text-left contact-form-seq relative overflow-hidden"
             >
               <div
@@ -1215,10 +1250,8 @@
                   >
                   <input
                     type="text"
-                    name="name"
                     placeholder="Your Name"
-                    required
-                    class="divine-input w-full px-6 py-4 rounded-full text-sm text-gray-900 placeholder-gray-400"
+                    class="divine-input w-full px-6 py-4 rounded-full text-sm text-gray-900 placeholder-gray-400" required
                   />
                 </div>
                 <div class="flex-1 flex flex-col gap-2">
@@ -1228,10 +1261,8 @@
                   >
                   <input
                     type="email"
-                    name="email"
                     placeholder="Email Address"
-                    required
-                    class="divine-input w-full px-6 py-4 rounded-full text-sm text-gray-900 placeholder-gray-400" 
+                    class="divine-input w-full px-6 py-4 rounded-full text-sm text-gray-900 placeholder-gray-400" required
                   />
                 </div>
                 <div class="flex-1 flex-col gap-2">
@@ -1257,7 +1288,6 @@
                 <textarea
                   rows="4"
                   placeholder="How can we collaborate?"
-                  name="message"
                   class="divine-input w-full px-6 py-4 rounded-3xl text-sm text-gray-900 placeholder-gray-400 resize-none" required
                 ></textarea>
               </div>
@@ -1276,7 +1306,7 @@
         </section>
       </div>
   </main>
-      <!-- Footer Section -->
+ <!-- Footer Section -->
       <footer class="relative z-0 footer-glass text-white pt-24 pb-12 px-6 rounded-t-[3rem] -mt-8 overflow-hidden">
         <!-- background glow -->
         <div
@@ -1313,11 +1343,6 @@
                 href="#"
                 class="text-sm font-medium text-gray-300 hover:text-amber-500 transition-colors w-max"
                 >Corporate Identity</a
-              >
-              <a
-                href="#"
-                class="text-sm font-medium text-gray-300 hover:text-amber-500 transition-colors w-max"
-                >QR Integration Systems</a
               >
               <a
                 href="#"
@@ -1410,6 +1435,19 @@
   
 
     <script>
+       const toggleBtn = document.getElementById("menu-toggle");
+       const mobileMenu = document.getElementById("mobile-menu");
+
+    toggleBtn.addEventListener("click", () => {
+    toggleBtn.classList.toggle("open");
+    mobileMenu.classList.toggle("hidden");
+    });
+    document.querySelectorAll("#mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        toggleBtn.classList.remove("open");
+    });
+  });
       gsap.registerPlugin(ScrollTrigger);
 
       // --- 1. OPTICAL LENS CURSOR PHYSICS ---
@@ -1574,14 +1612,14 @@
             "shadow-emerald-500/30"
           );
 
-          // 4. Trigger a satisfying GSAP elastic pop
+          // Trigger a satisfying GSAP elastic pop
           gsap.fromTo(
             transmitBtn,
             { scale: 0.9 },
             { scale: 1, duration: 0.6, ease: "elastic.out(1, 0.4)" }
           );
 
-          // 5. Reset the button back to normal after 3 seconds
+          //  Reset the button back to normal after 3 seconds
           setTimeout(() => {
             transmitBtn.innerText = originalText;
             
@@ -1604,7 +1642,7 @@
         });
       }
 
-      // --- 6. MAGNETIC BUTTON PHYSICS ---
+      // ---  MAGNETIC BUTTON PHYSICS ---
       const magneticBtns = document.querySelectorAll(".magnetic-btn");
       magneticBtns.forEach((btn) => {
         btn.addEventListener("mousemove", (e) => {
@@ -1629,6 +1667,8 @@
       });
 
       // --- HORIZONTAL SCROLL CAROUSEL MAGIC ---
+      const mm= gsap.matchMedia();
+      mm.add("(min-width: 768px)",()=>{
       const horizontalWrapper = document.querySelector(
         "#horizontal-projects-wrapper",
       );
@@ -1664,8 +1704,8 @@
           },
         });
       });
-
-      // --- NEW: PROJECT IMAGE HOVER TEXT ---
+  });
+      //  PROJECT IMAGE HOVER TEXT ---
       const cursorText = document.getElementById("cursor-text");
 
       document.querySelectorAll(".view-project-trigger").forEach((el) => {
